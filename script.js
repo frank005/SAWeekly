@@ -32,7 +32,8 @@ let namesListToGo = [
 	'Kate',
 	'Monica',
 	'Rahul',
-	'Ryan'
+	'Ryan',
+	'TJ'
 ];
 
 let namesListDone = [];
