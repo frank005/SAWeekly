@@ -6,6 +6,7 @@ body {
     letter-spacing: 2px;
     background-color: black;
     color: white;
+    user-select: none;
 }
 
 .flashing {
