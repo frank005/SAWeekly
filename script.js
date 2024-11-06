@@ -32,7 +32,6 @@ let namesListToGo = [
   "Joe",
   "Kate",
   "Monica",
-  "Rahul",
   "Ryan",
   "TJ",
 ];
