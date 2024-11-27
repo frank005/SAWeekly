@@ -22,7 +22,6 @@ headerOne.innerText += "SA Weekly " + parseInt(month + 1) + "/" + day;
 let namesListToGo = [
   "Aleksey",
   "Amar",
-  "Ansab",
   "Ben",
   "Blaise",
   "Eragam",
