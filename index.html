@@ -1,16 +1,19 @@
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css" />
 <h1 id="headerNames"></h1>
 <div id="overlay">
-	<div id="fill"></div>
+  <div id="fill"></div>
 </div>
-<div id="timer" > &nbsp</div>
-<div class="button" id="nextButton" >Start</div>
-<div id="lists" >
-	<div style="flex:50%">
-		<ul id="togo"></ul>
-	</div>
-	<div style="flex:50%">	
-		<ul id="done"></ul>
-	</div>
+<div id="timer">&nbsp</div>
+<div class="button-container">
+  <div class="button" id="pauseButton" style="display: none">Pause</div>
+  <div class="button" id="nextButton">Start</div>
+</div>
+<div id="lists">
+  <div style="flex: 50%">
+    <ul id="togo"></ul>
+  </div>
+  <div style="flex: 50%">
+    <ul id="done"></ul>
+  </div>
 </div>
 <script src="script.js"></script>

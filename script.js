@@ -1,6 +1,7 @@
 "use strict";
 // DOM
 const nextButton = document.getElementById("nextButton");
+const pauseButton = document.getElementById("pauseButton");
 const headerOne = document.getElementById("headerNames");
 const timerDOM = document.getElementById("timer");
 const toGo = document.getElementById("togo");
@@ -28,9 +29,8 @@ let namesListToGo = [
   "Frank",
   "Brent",
   "Jay",
-  "Joe",
   "Kate",
-  "Monica",
+  // "Monica",
   "Ryan",
   "TJ",
 ];
@@ -67,19 +67,19 @@ timerWorker.onmessage = (event) => {
     timer < 0 ? fill.classList.remove("flashing-bar") : null;
     timer < 0 ? document.body.classList.add("flashing") : null;
     timer < -30 ? document.body.classList.add("flashing-fast") : null;
+  } else if (event.data === "paused") {
+    pauseButton.textContent = "Resume";
+    pauseButton.classList.add("paused");
+  } else if (event.data === "resumed") {
+    pauseButton.textContent = "Pause";
+    pauseButton.classList.remove("paused");
   }
 };
 const startTimer = () => {
   timerWorker.postMessage("start");
-  // countdown = setInterval(function () {
-  //   timer = timer - 0.1;
-  //   timerDOM.innerHTML = timer.toFixed();
-  //   fill.style.width = "" + 100 - (timer / totalTime) * 100 + "%";
-  //   timer < 10 ? fill.classList.add("flashing-bar") : null;
-  //   timer < 0 ? fill.classList.remove("flashing-bar") : null;
-  //   timer < 0 ? document.body.classList.add("flashing") : null;
-  //   timer < -30 ? document.body.classList.add("flashing-fast") : null;
-  // }, 100);
+  pauseButton.style.display = "block";
+  pauseButton.textContent = "Pause";
+  pauseButton.classList.remove("paused");
 };
 
 const reset = () => {
@@ -90,8 +90,8 @@ const reset = () => {
   timerDOM.innerHTML = totalTime;
   timer = totalTime;
   document.body.style.backgroundColor = "black";
-  // clearInterval(countdown);
   timerWorker.postMessage("stop");
+  pauseButton.style.display = "none";
 };
 
 nextButton.addEventListener("click", () => {
@@ -109,10 +109,10 @@ nextButton.addEventListener("click", () => {
     fill.style.width = "0%";
     headerOne.innerText = "SA Weekly " + parseInt(month + 1) + " / " + day;
     timerDOM.innerText = "DONE ! ";
-    // clearInterval(countdown);
     document.body.classList.remove("flashing");
     document.body.classList.add("flashing-fast");
     nextButton.style.visibility = "hidden";
+    pauseButton.style.visibility = "hidden";
     lists.style.visibility = "hidden";
     timerDOM.style.fontSize = "8em";
   }
@@ -134,4 +134,8 @@ done.addEventListener("click", (item) => {
   namesListToGo.push(namesListDone[nameIndex]);
   namesListDone.splice(nameIndex, 1);
   updateLists();
+});
+
+pauseButton.addEventListener("click", () => {
+  timerWorker.postMessage("pause");
 });
