@@ -25,7 +25,6 @@ let namesListToGo = [
   "Amar",
   "Ben",
   "Blaise",
-  "Eragam",
   "Frank",
   "Brent",
   "Jay",
