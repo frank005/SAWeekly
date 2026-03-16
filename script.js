@@ -22,16 +22,15 @@ headerOne.innerText += "SA Weekly " + parseInt(month + 1) + "/" + day;
 
 let namesListToGo = [
   "Aleksey",
-  "Amar",
   "Ben",
   "Blaise",
   "Frank",
   "Brent",
   "Jay",
   "Kate",
-  // "Monica",
   "Ryan",
   "TJ",
+  //Teams Past Amar, Monica, Rahul, Ansab, Joe
 ];
 
 let namesListDone = [];
