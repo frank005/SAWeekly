@@ -28,9 +28,8 @@ let namesListToGo = [
   "Brent",
   "Jay",
   "Kate",
-  "Ryan",
   "TJ",
-  //Teams Past Amar, Monica, Rahul, Ansab, Joe
+  //Teams Past Ryan, Amar, Monica, Rahul, Ansab, Joe
 ];
 
 let namesListDone = [];
