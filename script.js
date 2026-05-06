@@ -11,7 +11,7 @@ const lists = document.getElementById("lists");
 const fill = document.getElementById("fill");
 
 // Timer
-const TOTAL_TIME = 120;
+const TOTAL_TIME = 300;
 let timeRemaining = TOTAL_TIME;
 
 const timerWorker = new Worker("timer.js");
